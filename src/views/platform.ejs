@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>(platform)ZC</title>
+  <link rel="stylesheet" href="/styles/pages/layout-Platform.css">
+  <link rel="stylesheet" href="/styles/pages/Platform.css">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap"
+    rel="stylesheet">
+  <script src="./scripts.js"></script>
+  <script src="/scripts/index.js" defer type="module"></script>
+
+
+</head>
+
+<body>
+
+  <header>
+    <!-- <h1 id="logo">dev<span>.</span>finance<span class="cifrao">$</span></h1> -->
+    <h2>slides</h2>
+  </header>
+
+  <main class="container">
+
+    <section id="balance">
+      <h2 class="sr-only">Balanço</h2>
+      <div class="card">
+        <div class="img-slider">
+          <div class="slide active">
+            <img src="/images/slides/pexels-photo-1647907.jpeg" alt="">
+            <div class="info">
+              <h2>slide 01</h2>
+              <p>aldnapdkoa apdiaijdapokda dpaida-okda dapdijadadapirf sfohsfsfiuk</p>
+            </div>
+          </div>
+          <div class="slide">
+            <img src="/images/slides/pexels-photo-3760378.jpeg" alt="">
+            <div class="info">
+              <h2>slide 02</h2>
+              <p>aldnapdkoa apdiaijdapokda dpaida-okda dapdijadadapirf sfohsfsfiuk</p>
+            </div>
+          </div>
+          <div class="slide">
+            <img src="/images/slides/pexels-photo-4063528.jpeg" alt="">
+            <div class="info">
+              <h2>slide 03</h2>
+              <p>aldnapdkoa apdiaijdapokda dpaida-okda dapdijadadapirf sfohsfsfiuk</p>
+            </div>
+          </div>
+          <div class="navigation">
+            <div class="btn">
+            </div>
+            <div class="btn">
+            </div>
+            <div class="btn">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        
+      </div>
+
+      <div class="card total">
+        
+      </div>
+    </section>
+
+    <section id="transaction">
+      <!-- <h2 class="sr-only">Transações</h2> -->
+
+
+    </section>
+
+  </main>
+
+
+  <footer>
+    <p>(platform)ZC</p>
+  </footer>
+
+  <script>
+    var slides = document.querySelectorAll('.slide')
+    var btns = document.querySelectorAll('.btn')
+    let currentSlide = 1;
+
+    // JavaScript for image slider manual navigation
+    var manualNav = function (manual) {
+      slides.forEach((slide) => {
+        slide.classList.remove('active');
+
+        btns.forEach((btn) => {
+          btn.classList.remove('active');
+        })
+      });
+
+      slides[manual].classList.add('active');
+      btns[manual].classList.add('active');
+    }
+
+    btns.forEach((btn, i) => {
+      btn.addEventListener("click", () => {
+        manualNav(i);
+        currentSlide = i;
+      })
+    })
+
+    // JavaScript for image slider autoplay navigation
+    var repeat = function (activeClass) {
+      let active = document.getElementsByClassName('active');
+      let i = 1;
+
+      var repeater = () => {
+        setTimeout(function () {
+          [...active].forEach((activeSlide) => {
+            activeSlide.classList.remove('active');
+          })
+
+          slides[i].classList.add('active')
+          btns[i].classList.add('active')
+          i++;
+
+          if (slides.length == i) {
+            i = 0
+          }
+          if (i >= slides.length) {
+            return;
+          }
+          repeater();
+        }, 10000);
+      }
+      repeater();
+    }
+    repeat();
+  </script>
+
+</body>
+
+</html>
