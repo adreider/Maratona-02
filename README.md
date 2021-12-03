@@ -48,4 +48,4 @@ Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](.github/LICENSE.
 
 ---
 
-Feito com ♥ by TI - Autocom :wave: [Visite nosso site!](http://tiautocom.com/)
+Feito com ♥ by Adriano lino :wave: [Visite nosso site!](http://adriano.vercel.app)
